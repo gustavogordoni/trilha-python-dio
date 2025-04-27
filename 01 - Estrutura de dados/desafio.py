@@ -10,6 +10,7 @@ def menu():
     [nc]\tNova conta
     [lc]\tListar contas
     [nu]\tNovo usuário
+    [au]\tAlterar usuário
     [q]\tSair
     => """
     return input(textwrap.dedent(menu))
@@ -101,7 +102,37 @@ def listar_contas(contas):
         """
         print("=" * 100)
         print(textwrap.dedent(linha))
+        
+        
+def alterar_usuario(usuarios):
+    cpf = input("Informe o CPF do usuário para alterar os dados: ")
+    usuario = filtrar_usuario(cpf, usuarios)
 
+    if not usuario:
+        print("\n@@@ Usuário não encontrado! @@@")
+        return
+
+    print(f"\nUsuário encontrado: {usuario['nome']}")
+    
+    campo = input("\nQual campo você deseja alterar? (nome, data_nascimento, endereco): ").lower()
+    
+    if campo == "nome":
+        novo_nome = input("Informe o novo nome completo: ")
+        usuario['nome'] = novo_nome
+        print("\n=== Nome alterado com sucesso! ===")
+        
+    elif campo == "data_nascimento":
+        nova_data_nascimento = input("Informe a nova data de nascimento (dd-mm-aaaa): ")
+        usuario['data_nascimento'] = nova_data_nascimento
+        print("\n=== Data de nascimento alterada com sucesso! ===")
+        
+    elif campo == "endereco":
+        novo_endereco = input("Informe o novo endereço (logradouro, nro - bairro - cidade/sigla estado): ")
+        usuario['endereco'] = novo_endereco
+        print("\n=== Endereço alterado com sucesso! ===")
+        
+    else:
+        print("\n@@@ Opção inválida! Nenhum dado foi alterado. @@@")
 
 def main():
     LIMITE_SAQUES = 3
@@ -149,6 +180,9 @@ def main():
 
         elif opcao == "lc":
             listar_contas(contas)
+            
+        elif opcao == "au":
+            alterar_usuario(usuarios)
 
         elif opcao == "q":
             break
