@@ -1,27 +1,42 @@
-# package_name
+# Projeto: Pacote de Processamento de Imagens
 
-Description. 
-The package package_name is used to:
-	- 
-	-
+### Descrição
 
-## Installation
+O pacote "image_processing-test" é usado para:
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install package_name
+- Módulo `processing`:
+  - Redimensionar imagens;
+  - Calcular similaridade estrutural;
+  - Fazer correspondência de histograma;
+
+- Módulo `utils`:
+  - Ler imagens;
+  - Salvar imagens;
+  - Exibir imagens com `matplotlib`;
+  - Plotar histogramas;
+
+---
+
+## Instalação
+
+Use o gerenciador de pacotes [pip](https://pip.pypa.io/en/stable/) para instalar image_processing_tools.
 
 ```bash
-pip install package_name
+pip install image-processing-tools
 ```
 
-## Usage
-
+##   Uso 
 ```python
-from package_name.module1_name import file1_name
-file1_name.my_function()
+from image_processing_tools.processing import resize
+from image_processing_tools.utils import load_image, plot_image
+
+img = load_image("caminho/para/imagem.jpg")
+img_resized = resize(img, 200, 200)
+plot_image(img_resized)
 ```
 
 ## Author
-My_name
+Gustavo Luiz Gordoni
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
