@@ -49,14 +49,14 @@ Este projeto foi desenvolvido como parte do desafio da DIO para praticar o uso d
 
 ## Ferramentas Utilizadas
 
-- Microsoft Azure Speech Studio  
-- Microsoft Azure Language Studio  
-- Navegador Edge/Chrome  
-- Conta gratuita do Azure  
-- Git e GitHub para documentação  
+- Microsoft Azure Speech Studio
+- Microsoft Azure Language Studio
+- Navegador Edge/Chrome
+- Conta gratuita do Azure
+- Git e GitHub para documentação
 
 ---
 
-## 📌 Conclusão
+## Conclusão
 
 Este laboratório foi essencial para entender como as ferramentas de IA da Microsoft podem ser aplicadas de forma prática em projetos reais. Tanto o Speech Studio quanto o Language Studio oferecem recursos poderosos e acessíveis, ideais para quem deseja iniciar no desenvolvimento com IA aplicada a voz e linguagem.
